@@ -1,990 +1,481 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Shirzad  Gallery Photography</title>
-<!---Bootstrap Css---> 
-    <link
-        rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
-<!---- Bootstrap Icons----->
- <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<!---link Css---->
-<link rel="stylesheet" href="Css/style.css"> 
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Shirzad Photography</title>
 
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Css/gallery.css">
+</head>
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- NAVBAR -->
+<nav class="topbar">
+    <a class="brand" href="index.html">
+        <i class="bi bi-camera-fill"></i>
+        <span><b>SHIRZAD</b> PHOTOGRAPHY</span>
+    </a>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-
-    <div class="container">
-
-        <a class="navbar-brand fw-bold" href="#">
-            <i class="bi bi-camera"></i>
-            Shirzad Photography
-        </a>
-
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Gallery</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">AI Studio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                 <li class="nav-item">
-                            <a class="nav-link" href="#">Download</a>
-                        </li>
-
-            </ul>
-
-        </div>
-
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </div>
 
+    <div class="nav-actions">
+        <button id="searchFocus" aria-label="Focus search"><i class="bi bi-search"></i></button>
+        <button id="topFavorites" aria-label="Show favorites">
+            <i class="bi bi-heart"></i><span id="topFavCount">0</span>
+        </button>
+        <button id="menuToggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+    </div>
 </nav>
 
-
-
-<!-- =========================
-     GALLERY SECTION
-========================= -->
-
-<section class="gallery-section">
-
-    <div class="container">
-
-        <!-- Heading -->
-
-        <div class="text-center gallery-heading">
-
-            <p class="small-title">
-                MY COLLECTION
-            </p>
-
-            <h1>
-                Photography Gallery
-            </h1>
-
-            <p>
-                Explore beautiful moments captured through my camera.
-            </p>
-
-        </div>
-
-
-        <!-- =========================
-             FILTER BUTTONS
-        ========================= -->
-
-        <div class="filter-buttons text-center">
-
-            <button class="filter-btn active"
-                    data-filter="all">
-                All
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="nature">
-                Nature
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="travel">
-                Travel
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="portrait">
-                Portrait
-            </button>
-
-               <button class="filter-btn"
-                    data-filter="wedding">
-                Landscape
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="wedding">
-                Wedding
-            </button>
-
-              <button class="filter-btn"
-                    data-filter="wedding">
-                Free
-            </button>
-
-               <button class="filter-btn"
-                    data-filter="wedding">
-                Paid
-            </button>
-
-            </button>
-
-        </div>
-
-
-
-        <!-- =========================
-             FREE GALLERY
-        ========================= -->
-
-        <div class="gallery-title">
-
-            <h2>Free Gallery</h2>
-
-            <p>
-                Free photography collection
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <!-- Photo 1 -->
-
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="nature">
-
-                <div class="photo-card">
-
-                    <img src="Image/nature4.jpg"
-                         alt="Mountain Landscape"
-                         class="gallery-img">
-
-                    <div class="photo-info">
-
-                        <h5>
-                            Mountain Landscape
-                        </h5>
-
-                        <p>
-                            Nature Photography
-                        </p>
-                        <a href="Image/nature4.jpg" download="Shirzad-Nature-.jpg" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download
-                        </a>
-
-                    </div>
-                 </div>
-
-            </div>
-
-
-
-            <!-- Photo 2 -->
-
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="travel">
-
-                <div class="photo-card">
-
-                    <img src="Image/travel.jpg"s
-                         alt="Luxury Travel"
-                         class="gallery-img">
-
-                    <div class="photo-info">
-
-                        <h5>
-                            Luxury Travel
-                        </h5>
-
-                        <p>
-                            Travel Photography
-                        </p>
-                        <a href="Image/travel.jpg" download="Shirzad-travel-.jpg" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Photo 3 -->
-
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="portrait">
-
-                <div class="photo-card">
-
-                    <img src="Image/portrait1.jpg"
-                         alt="Portrait"
-                         class="gallery-img">
-
-                    <div class="photo-info">
-
-                        <h5>
-                            Beautiful Portrait
-                        </h5>
-
-                        <p>
-                            Portrait Photography
-                        </p>
-
-                        <a href="Image/portrait1.jpg" download="Shirzad-portrait-.jpg" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-        </div>
-
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-copy">
+        <span class="overline">OUR GALLERY</span>
+        <h1>Capturing Beauty<br>in Every <span>Moment</span></h1>
+        <p>
+            Explore a curated collection of breathtaking photographs
+            from around the world, nature, people and unforgettable moments.
+        </p>
     </div>
 
-</section>
-<!-- ============================= -->
-<!--        PAID GALLERY           -->
-<!-- ============================= -->
-
-<section class="paid-gallery py-5" id="paid-gallery">
-
-    <div class="container">
-
-        <div class="gallery-title text-center mb-5">
-            <span class="section-label">PREMIUM COLLECTION</span>
-
-            <h2>Paid Gallery</h2>
-
-            <p>
-                Discover exclusive professional photography
-                available for purchase.
-            </p>
-        </div>
-
-
-        <div class="row g-4">
-
-            <!-- Photo 1 -->
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="travel">
-
-                <div class="premium-card">
-
-                    <div class="premium-image">
-
-                        <img src="Image/travel2.jpg"
-                             class="gallery-img"
-                             alt="Luxury Travel">
-
-                        <span class="premium-badge">
-                            PREMIUM
-                        </span>
-
-                    </div>
-
-                    <div class="premium-content">
-
-                        <h5>Luxury Travel</h5>
-
-                        <p>
-                            Professional travel photography
-                            collection.
-                        </p>
-
-                        <div class="price">
-                            $10.00
-                         </div>
-
-                        <button class="btn premium-btn buy-btn" data-photo="Luxury Travel" data-price="10">
-                            <i class="bi bi-cart"></i>
-                            Buy Photo
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Photo 2 -->
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="nature">
-
-                <div class="premium-card">
-
-                    <div class="premium-image">
-
-                        <img src="Image/nature3.jpg"
-                             class="gallery-img"
-                             alt="Mountain Landscape">
-
-                        <span class="premium-badge">
-                            PREMIUM
-                        </span>
-
-                    </div>
-
-                    <div class="premium-content">
-
-                        <h5>Mountain Landscape</h5>
-
-                        <p>
-                            Beautiful high-quality nature
-                            photography.
-                        </p>
-
-                        <div class="price">
-                            $12.00
-                        </div>
-
-                         <button class="btn premium-btn buy-btn" data-photo="Luxury Travel" data-price="12">
-                            <i class="bi bi-cart"></i>
-                            Buy Photo
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Photo 3 -->
-            <div class="col-lg-4 col-md-6 photo-item"
-                 data-category="wedding">
-
-                <div class="premium-card">
-
-                    <div class="premium-image">
-
-                        <img src="Image/wedding2.jpg"
-                             class="gallery-img"
-                             alt="Wedding Photography">
-
-                        <span class="premium-badge">
-                            PREMIUM
-                        </span>
-
-                    </div>
-
-                    <div class="premium-content">
-
-                        <h5>Wedding Photography</h5>
-
-                        <p>
-                            Professional wedding photography
-                            collection.
-                        </p>
-
-                        <div class="price">
-                            $15.00
-                        </div>
-
-                      <button class="btn premium-btn buy-btn" data-photo="Luxury Travel" data-price="15">
-                            <i class="bi bi-cart"></i>
-                            Buy Photo
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="hero-stats">
+        <div><strong>06+</strong><small>Collections</small></div>
+        <div><strong id="heroPhotoCount">06</strong><small>Photos</small></div>
+        <div><strong>∞</strong><small>Stories</small></div>
     </div>
-
-</section>
-
-<!-- =========================
-     AI STUDIO
-========================= -->
-
-<section class="ai-studio" id="aiStudio">
-
-    <div class="container">
-
-        <div class="ai-title text-center">
-
-            <span>AI POWERED PHOTOGRAPHY</span>
-
-            <h2>AI Studio</h2>
-
-            <p>
-                Enhance and transform your photos with smart AI tools.
-            </p>
-
-        </div>
-
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-8">
-
-                <div class="ai-card">
-
-                    <!-- Upload -->
-
-                    <div class="upload-area text-center">
-
-                        <i class="bi bi-cloud-arrow-up"></i>
-
-                        <h4>Upload Your Photo</h4>
-
-                        <p>
-                            Select an image and start editing.
-                        </p>
-
-                        <input
-                            type="file"
-                            id="imageUpload"
-                            accept="image/*"
-                            class="form-control"
-                        >
-
-                    </div>
-
-
-                    <!-- Preview -->
-
-                    <div class="image-preview text-center">
-
-                        <img
-                            id="previewImage"
-                            src=""
-                            alt="Preview"
-                        >
-
-                        <p id="previewText">
-                            Your photo will appear here
-                        </p>
-
-                    </div>
-
-
-                    <!-- AI Tools -->
-
-                    <div class="ai-tools">
-
-                        <h4>AI Tools</h4>
-
-                        <div class="row g-3">
-
-                            <div class="col-md-4">
-
-                                <button
-                                    class="ai-btn"
-                                    id="enhanceBtn">
-
-                                    <i class="bi bi-stars"></i>
-
-                                    AI Enhance
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="col-md-4">
-
-                                <button
-                                    class="ai-btn"
-                                    id="brightnessBtn">
-
-                                    <i class="bi bi-brightness-high"></i>
-
-                                    Brightness
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="col-md-4">
-
-                                <button
-                                    class="ai-btn"
-                                    id="grayscaleBtn">
-
-                                    <i class="bi bi-circle-half"></i>
-
-                                    Black & White
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Reset -->
-
-                    <div class="text-center mt-4">
-
-                        <button
-                            id="resetBtn"
-                            class="btn btn-outline-light rounded-pill px-4">
-
-                            Reset
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     LIGHTBOX
-========================= -->
-
-<div class="lightbox" id="lightbox">
-
-    <!-- Close -->
-
-    <button class="lightbox-close"
-            id="lightboxClose">
-
-        <i class="bi bi-x-lg"></i>
-
-    </button>
-
-
-    <!-- Previous -->
-
-    <button class="lightbox-prev"
-            id="lightboxPrev">
-
-        <i class="bi bi-chevron-left"></i>
-
-    </button>
-
-
-    <!-- Content -->
-
-    <div class="lightbox-content">
-<img id="lightboxImage"
-             src=""
-             alt="">
-
-        <div class="lightbox-caption">
-
-            <h4 id="lightboxTitle"></h4>
-
-            <p id="lightboxDescription"></p>
-
-        </div>
-
-    </div>
-
-
-    <!-- Next -->
-
-    <button class="lightbox-next"
-            id="lightboxNext">
-
-        <i class="bi bi-chevron-right"></i>
-
-    </button>
+</header>
+
+<!-- GALLERY CONTROLS -->
+<main class="main-content">
+    <section class="gallery-area" id="gallery">
+
+        <div class="toolbar">
+           <div class="filters">
+
+    <!-- Category Filters -->
+    <button class="filter-btn active"
+            data-filter-group="category"
+            data-filter="all">All</button>
+
+    <button class="filter-btn"
+            data-filter-group="category"
+            data-filter="nature">Nature</button>
+
+    <button class="filter-btn"
+            data-filter-group="category"
+            data-filter="travel">Travel</button>
+
+    <button class="filter-btn"
+            data-filter-group="category"
+            data-filter="portrait">Portrait</button>
+
+    <button class="filter-btn"
+            data-filter-group="category"
+            data-filter="wedding">Wedding</button>
+
+    <!-- Price Filters -->
+    <button class="filter-btn"
+            data-filter-group="access"
+            data-filter="free">
+         Free </button>
+
+    <button class="filter-btn"
+            data-filter-group="access"
+            data-filter="paid">
+         Paid </button>
+
+    <!-- Orientation Filters -->
+    <button class="filter-btn"
+            data-filter-group="orientation"
+            data-filter="vertical">
+         Vertical</button>
+
+    <button class="filter-btn"
+            data-filter-group="orientation"
+            data-filter="horizontal">
+        Horizontal</button>
 
 </div>
- <!-- =========================
-     PRICING
-========================= -->
+            <div class="toolbar-right">
+                <label class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input id="photoSearch" type="search" placeholder="Search photos..." aria-label="Search photos">
+                    <button id="clearSearch" type="button" aria-label="Clear search">&times;</button>
+                </label>
 
-<section class="pricing-section" id="pricing">
+                <button id="favoritesToggle" class="my-favorites">
+                    <i class="bi bi-heart"></i>
+                    My Favorites (<span id="favCount">0</span>)
+                </button>
+            </div>
+        </div>
 
-    <div class="container">
+        <!-- PHOTO GRID -->
+        <div class="photo-grid" id="photoGrid">
 
-        <div class="pricing-heading text-center">
+            <article class="photo-card" data-category="nature" data-title="Mountain Dreams" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/nature4.jpg" alt="Mountain Dreams - mountain landscape" class="photo-img">
+                    <span class="category-tag">NATURE</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                        <a class="download-icon" href="Image/nature4.jpg" download="mountain-dreams.jpg" aria-label="Download Mountain Dreams"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Mountain Dreams"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Mountain Dreams</h3><p>01</p></div><span class="photo-type">Nature</span></div>
+            </article>
 
-            <span>CHOOSE YOUR PLAN</span>
+            <article class="photo-card" data-category="travel" data-title="Wander Beyond" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/travel.jpg" alt="Wander Beyond - coastal travel view" class="photo-img">
+                    <span class="category-tag">TRAVEL</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                        <a class="download-icon" href="Image/travel.jpg" download="wander-beyond.jpg" aria-label="Download Wander Beyond"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Wander Beyond"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Wander Beyond</h3><p>02</p></div><span class="photo-type">Travel</span></div>
+            </article>
 
-            <h2>Photography Pricing</h2>
+            <article class="photo-card" data-category="portrait" data-title="Silent Expression" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/portrait1.jpg" alt="Silent Expression - portrait photograph" class="photo-img">
+                    <span class="category-tag">PORTRAIT</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                        <a class="download-icon" href="Image/portrait1.jpg" download="silent-expression.jpg" aria-label="Download Silent Expression"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Silent Expression"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Silent Expression</h3><p>03</p></div><span class="photo-type">Portrait</span></div>
+            </article>
 
-            <p>
-                Choose the package that works best for you.
-            </p>
+            <article class="photo-card" data-category="travel" data-title="Road to Somewhere" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/travel2.jpg" alt="Road to Somewhere - mountain road" class="photo-img">
+                    <span class="category-tag">TRAVEL</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                        <a class="download-icon" href="Image/travel2.jpg" download="road-to-somewhere.jpg" aria-label="Download Road to Somewhere"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Road to Somewhere"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Road to Somewhere</h3><p>04</p></div><span class="photo-type">Travel</span></div>
+            </article>
+
+            <article class="photo-card" data-category="nature" data-title="Nature's Silence" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/nature3.jpg" alt="Nature's Silence - waterfall and forest" class="photo-img">
+                    <span class="category-tag">NATURE</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                     <a class="download-icon" href="Image/nature3.jpg" download="natures-silence.jpg" aria-label="Download Nature's Silence"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Nature's Silence"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Nature's Silence</h3><p>05</p></div><span class="photo-type">Nature</span></div>
+            </article>
+
+            <article class="photo-card" data-category="wedding" data-title="Forever Begins" data-access="free" data-orientation="horizontal">
+                <div class="photo-frame">
+                    <img src="Image/wedding2.jpg" alt="Forever Begins - wedding photography" class="photo-img">
+                    <span class="category-tag">WEDDING</span>
+                    <div class="card-actions">
+                        <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false"><i class="bi bi-heart"></i></button>
+                        <a class="download-icon" href="Image/wedding2.jpg" download="forever-begins.jpg" aria-label="Download Forever Begins"><i class="bi bi-download"></i></a>
+                    </div>
+                    <button class="image-open" aria-label="Open Forever Begins"><i class="bi bi-arrows-fullscreen"></i></button>
+                </div>
+                <div class="photo-info"><div><h3>Forever Begins</h3><p>06</p></div><span class="photo-type">Wedding</span></div>
+            </article>
+            <!-- CARD 7: FREE NATURE -->
+            <article class="photo-card"
+         data-category="nature"
+         data-title="Forest Dreams"
+         data-access="free"
+         data-orientation="vertical">
+    <div class="photo-frame">
+        <img src="Image/nature4.jpg"
+             alt="Forest Dreams"
+             class="photo-img">
+        <span class="category-tag">NATURE</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+                <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/nature4.jpg"
+               download="forest-dreams.jpg" aria-label="Download Forest Dreams">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Forest Dreams">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Forest Dreams</h3><p>07</p></div>
+        <span class="photo-type">Nature</span>
+    </div>
+</article>
+
+<!-- CARD 8: FREE TRAVEL -->
+<article class="photo-card"
+         data-category="travel"
+         data-title="Hidden Journey"
+         data-access="free"
+         data-orientation="horizontal">
+    <div class="photo-frame">
+        <img src="Image/travel1.jpg"
+             alt="Hidden Journey"
+             class="photo-img">
+        <span class="category-tag">TRAVEL</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+                <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/travel1.jpg"
+               download="hidden-journey.jpg" aria-label="Download Hidden Journey">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Hidden Journey">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Hidden Journey</h3><p>08</p></div>
+        <span class="photo-type">Travel</span>
+    </div>
+</article>
+
+<!-- CARD 9: PAID PORTRAIT -->
+<article class="photo-card"
+         data-category="portrait"
+         data-title="Classic Beauty"
+         data-access="paid"
+         data-orientation="vertical">
+    <div class="photo-frame">
+        <img src="Image/portrait3.jpg"
+             alt="Classic Beauty"
+             class="photo-img">
+        <span class="category-tag">PORTRAIT</span>
+        <span class="paid-badge"><i class="bi bi-gem"></i> PAID</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+                <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/portrait3.jpg"
+               download="classic-beauty.jpg" aria-label="Download Classic Beauty">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Classic Beauty">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Classic Beauty</h3><p>09</p></div>
+        <span class="photo-type">Portrait</span>
+    </div>
+</article>
+
+<!-- CARD 10: FREE NATURE -->
+<article class="photo-card"
+         data-category="nature"
+         data-title="Green Valley"
+         data-access="free"
+         data-orientation="horizontal">
+    <div class="photo-frame">
+        <img src="Image/nature4.jpg"
+             alt="Green Valley"
+             class="photo-img">
+        <span class="category-tag">NATURE</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+         <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/nature4.jpg"
+               download="green-valley.jpg" aria-label="Download Green Valley">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Green Valley">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Green Valley</h3><p>10</p></div>
+        <span class="photo-type">Nature</span>
+    </div>
+</article>
+
+<!-- CARD 11: PAID WEDDING -->
+<article class="photo-card"
+         data-category="wedding"
+         data-title="Wedding Memories"
+         data-access="paid"
+         data-orientation="vertical">
+    <div class="photo-frame">
+        <img src="Image/wedding.jpg"
+             alt="Wedding Memories"
+             class="photo-img">
+        <span class="category-tag">WEDDING</span>
+        <span class="paid-badge"><i class="bi bi-gem"></i> PAID</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+                <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/wedding.jpg"
+               download="wedding-memories.jpg" aria-label="Download Wedding Memories">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Wedding Memories">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Wedding Memories</h3><p>11</p></div>
+        <span class="photo-type">Wedding</span>
+    </div>
+</article>
+
+<!-- CARD 12: PAID TRAVEL -->
+<article class="photo-card"
+         data-category="travel"
+         data-title="Road Adventure"
+         data-access="paid"
+         data-orientation="horizontal">
+    <div class="photo-frame">
+        <img src="Image/nature5.jpg"
+             alt="Road Adventure"
+             class="photo-img">
+        <span class="category-tag">TRAVEL</span>
+        <span class="paid-badge"><i class="bi bi-gem"></i> PAID</span>
+
+        <div class="card-actions">
+            <button class="favorite-btn" aria-label="Add to favorites" aria-pressed="false">
+                <i class="bi bi-heart"></i>
+            </button>
+            <a class="download-icon" href="Image/city2.jpg"
+               download="road-adventure.jpg" aria-label="Download Road Adventure">
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <button class="image-open" aria-label="Open Road Adventure">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+    </div>
+    <div class="photo-info">
+        <div><h3>Road Adventure</h3><p>12</p></div>
+        <span class="photo-type">Travel</span>
+    </div>
+</article>
 
         </div>
 
-
-        <div class="row g-4 justify-content-center">
-
-            <!-- FREE -->
-            <div class="col-lg-4 col-md-6">
-
-                <div class="pricing-card">
-
-                    <div class="pricing-icon">
-                        <i class="bi bi-image"></i>
-                    </div>
-
-                    <h3>Free</h3>
-
-                    <p class="pricing-description">
-                        For exploring our free photography collection.
-                    </p>
-
-                    <div class="price">
-                        $0
-                        <span>/ forever</span>
-                    </div>
-
-                    <ul class="pricing-features">
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Free Gallery Access
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Standard Images
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Personal Use
-                        </li>
-
-                        <li class="disabled">
-                            <i class="bi bi-x-circle"></i>
-                            Premium Photos
-                        </li>
-
-                        <li class="disabled">
-                            <i class="bi bi-x-circle"></i>
-                            AI Tools
-                        </li>
-
-                    </ul>
-
-                    <button class="pricing-btn">
-                        Get Started
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- BASIC -->
-            <div class="col-lg-4 col-md-6">
-
-                <div class="pricing-card popular">
-
-                    <div class="popular-badge">
-                        POPULAR
-                    </div>
-
-                    <div class="pricing-icon">
-                        <i class="bi bi-camera"></i>
-                    </div>
-
-                    <h3>Basic</h3>
-
-                    <p class="pricing-description">
-                        Perfect for personal photography projects.
-                    </p>
-
-                    <div class="price">
-                        $10
-                        <span>/ month</span>
-                    </div>
-
-                    <ul class="pricing-features">
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Free Gallery
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Premium Photos
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            High Quality Images
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Basic AI Tools
-                        </li>
-
-                        <li class="disabled">
-                            <i class="bi bi-x-circle"></i>
-                            Advanced AI
-                        </li>
-
-                    </ul>
-
-                    <button class="pricing-btn">
-                        Choose Basic
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- PREMIUM -->
-            <div class="col-lg-4 col-md-6">
-
-                <div class="pricing-card">
-                    <div class="pricing-icon">
-                        <i class="bi bi-stars"></i>
-                    </div>
-
-                    <h3>Premium</h3>
-
-                    <p class="pricing-description">
-                        For professional photographers and creators.
-                    </p>
-
-                    <div class="price">
-                        $25
-                        <span>/ month</span>
-                    </div>
-
-                    <ul class="pricing-features">
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Everything in Basic
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Unlimited Premium Photos
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Advanced AI Studio
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            AI Photo Enhancement
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle"></i>
-                            Priority Support
-                        </li>
-
-                    </ul>
-
-                    <button class="pricing-btn">
-                        Choose Premium
-                    </button>
-
-                </div>
-
-            </div>
-
+        <div class="empty-state" id="emptyState" hidden>
+            <i class="bi bi-images"></i>
+            <h3>No photos found</h3>
+            <p>Try another category or search term.</p>
+            <button id="resetGallery">Show all photos</button>
         </div>
+    </section>
 
+    <section class="collections" id="collections">
+        <div>
+            <span class="overline">BEHIND THE LENS</span>
+            <h2>Capturing moments<br>that <span>last forever.</span></h2>
+        </div>
+        <a href="contact.html" class="contact-btn">Let's work together <i class="bi bi-arrow-up-right"></i></a>
+    </section>
+</main>
+
+<!-- PHOTO LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous photo"><i class="bi bi-chevron-left"></i></button>
+
+    <div class="lightbox-inner">
+        <img src="" alt="" id="lightboxImage">
+        <div class="lightbox-caption">
+            <div>
+                <small id="lightboxCategory">PHOTOGRAPHY</small>
+                <h3 id="lightboxTitle"></h3>
+            </div>
+            <div class="lightbox-actions">
+                <button id="lightboxFavorite" aria-label="Toggle favorite"><i class="bi bi-heart"></i></button>
+                <a id="lightboxDownload" href="#" download aria-label="Download photo"><i class="bi bi-download"></i></a>
+            </div>
+        </div>
     </div>
 
-</section>
-
-
-<!-- ================= ABOUT SECTION ================= -->
-<section class="about-section" id="about">
-    <div class="container">
-        <div class="row align-items-center g-5">
-
-            <!-- About Image -->
-            <div class="col-lg-6">
-                <div class="about-image">
-                    <img src="Image/nature3.jpg" alt="Shirzad Photography">
-                </div>
-            </div>
-
-            <!-- About Content -->
-            <div class="col-lg-6">
-                <div class="about-content">
-                    <span class="about-subtitle">ABOUT US</span>
-
-                    <h2>
-                        Capturing Moments,
-                        <span>Creating Memories</span>
-                    </h2>
-
-                    <p>
-                        Welcome to Shirzad Photography, where every photograph
-                        tells a unique story. We capture beautiful moments,
-                        emotions and unforgettable memories through creative
-                        photography.
-                    </p>
-
-                    <p>
-                        Our goal is to provide high-quality photography for
-                        everyone, from free collections to premium professional
-                        photographs.
-                    </p>
-
-                    <div class="about-features">
-
-                        <div class="about-feature">
-                            <i class="bi bi-camera"></i>
-                            <div>
-                                <h5>Professional Photography</h5>
-                                <p>High-quality and creative photographs.</p>
-                            </div>
-                        </div>
-
-                        <div class="about-feature">
-                            <i class="bi bi-stars"></i>
-                            <div>
-                                <h5>Creative Vision</h5>
-                                <p>Unique ideas for unforgettable moments.</p>
-                            </div>
-                        </div>
-
-                        <div class="about-feature">
-                            <i class="bi bi-magic"></i>
-                            <div>
-                                <h5>AI Studio</h5>
-                                <p>Modern tools for improving your photos.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <a href="#free-gallery" class="btn about-btn">
-                        Explore Gallery
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ================= BUY MODAL ================= -->
-
-<div class="buy-modal" id="buyModal">
-
-    <div class="buy-modal-content">
-
-        <button class="buy-close" id="buyClose">
+    <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next photo"><i class="bi bi-chevron-right"></i></button>
+</div>
+<!-- Paid Photo Confirmation Modal -->
+<div class="paid-modal" id="paidModal">
+    <div class="paid-modal-content">
+        <button type="button" class="paid-modal-close" id="closePaidModal">
             &times;
         </button>
 
-        <div class="buy-icon">
-            <i class="bi bi-cart-check"></i>
-        </div>
+        <i class="bi bi-gem paid-modal-icon"></i>
+        <h3>Premium Photo</h3>
+        <p>This photo requires payment before downloading.</p>
 
-        <h3>Purchase Photo</h3>
+        <label class="paid-checkbox">
+            <input type="checkbox" id="confirmPayment">
+            <span>I agree to purchase this photo.</span>
+        </label>
 
-        <p class="buy-photo-name" id="buyPhotoName">
-            Photo Name
-        </p>
-
-        <div class="buy-price">
-            $<span id="buyPhotoPrice">0</span>
-        </div>
-
-        <p class="buy-description">
-            You are purchasing a premium photography image.
-        </p>
-
-        <button class="confirm-buy-btn" id="confirmBuy">
-            <i class="bi bi-credit-card"></i>
-            Continue to Purchase
+        <button type="button" id="confirmDownload" disabled>
+            Continue
         </button>
+    </div>
+</div>
 
+<!-- FOOTER -->
+<footer class="footer">
+    <a href="index.html" class="brand footer-brand"><i class="bi bi-camera-fill"></i><span><b>SHIRZAD</b> PHOTOGRAPHY</span></a>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-</div>
-  <!---Footer--->
-    <footer>
-        <div class="container text-center">
-            <h4>
-                <i class="bi bi-camera"></i>
-                Shirzad Photography
-            </h4>
-            <p>Photography meets artificial intelligence.</p>
-            <div class="social-icons">
-                <a href="#">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-github"></i>
-                </a>
-            </div>
-            <hr>
-            <small>
-                @ 2026 Shirzad Photography. All rights reserved.
-            </small>
-        </div>
-    </footer>
+    <p>Capturing moments that last forever.</p>
 
-<!-- Bootstrap JavaScript -->
+    <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="#" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+    </div>
 
+    <div class="copyright">© 2026 Shirzad Photography. All rights reserved.</div>
+</footer>
 <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Your JavaScript -->
-
-<script src="Js/script.js"></script>
-
+<script src="Js/gallery.js"></script>
 </body>
 </html>
