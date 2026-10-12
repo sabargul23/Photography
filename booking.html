@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Photographer | Shirzad Photography</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Booking CSS -->
+    <link rel="stylesheet" href="Css/booking.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg booking-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-camera"></i>
+            Shirzad Photography
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#bookingNav"
+                aria-label="Open navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookingNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="booking.html">
+                        Book a Photographer
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="booking-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <span class="eyebrow">CAPTURE YOUR SPECIAL MOMENTS</span>
+
+        <h1>Every Moment Tells a Story</h1>
+
+        <p>
+            From weddings to graduation ceremonies,
+            let us capture your unforgettable memories.
+        </p>
+
+        <a href="#bookingForm" class="btn booking-btn">
+            Book Your Photographer
+            <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+</header>
+
+<!-- Services -->
+<section class="services-section container" id="services">
+    <div class="section-heading">
+        <span>OUR SERVICES</span>
+        <h2>What Are You Celebrating?</h2>
+        <p>Choose an event to explore our photography samples.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3">
+            <button class="service-card" data-gallery="wedding">
+                <i class="bi bi-heart"></i>
+                <h3>Wedding</h3>
+                <p>Explore wedding photography samples.</p>
+                <span class="view-samples">View Photos <i class="bi bi-arrow-right"></i></span>
+            </button>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <button class="service-card" data-gallery="graduation">
+                <i class="bi bi-mortarboard"></i>
+                <h3>Graduation</h3>
+                <p>Explore graduation photography samples.</p>
+                <span class="view-samples">View Photos <i class="bi bi-arrow-right"></i></span>
+            </button>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <button class="service-card" data-gallery="engagement">
+                <i class="bi bi-stars"></i>
+                <h3>Engagement</h3>
+                <p>Explore engagement photography samples.</p>
+                <span class="view-samples">View Photos <i class="bi bi-arrow-right"></i></span>
+            </button>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <button class="service-card" data-gallery="birthday">
+                <i class="bi bi-balloon"></i>
+                <h3>Birthday & Party</h3>
+                <p>Explore birthday and party samples.</p>
+                <span class="view-samples">View Photos <i class="bi bi-arrow-right"></i></span>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- Sample Photos -->
+<section class="samples-section container" id="samplesSection" hidden>
+    <div class="section-heading">
+        <span>PHOTO COLLECTION</span>
+        <h2 id="samplesTitle">Wedding Photography</h2>
+        <p>Explore examples for your special event.</p>
+    </div>
+
+    <div class="row g-4" id="samplesGrid"></div>
+
+    <div class="text-center mt-4">
+        <button class="btn booking-btn" id="bookThisEvent">
+            Book This Service
+            <i class="bi bi-arrow-right"></i>
+        </button>
+    </div>
+</section>
+<!-- Booking Form -->
+<section class="booking-section" id="bookingForm">
+    <div class="container">
+        <div class="booking-wrapper">
+
+            <div class="booking-intro">
+                <span>LET'S PLAN YOUR EVENT</span>
+                <h2>Book Your Photographer</h2>
+                <p>
+                    Complete the form below. Your request will be
+                    prepared as a WhatsApp message.
+                </p>
+                    <div class="contact-note">
+                    <i class="bi bi-whatsapp"></i>
+                    <div>
+                        <strong>Easy booking</strong>
+                        <p>Send your event details directly through WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="bookingRequestForm">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName"
+                               class="form-control"
+                               placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="customerPhone">Your Phone Number *</label>
+                        <input type="tel" id="customerPhone"
+                               class="form-control"
+                               placeholder="+93..." required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" class="form-select" required>
+                            <option value="">Choose an event</option>
+                            <option>Wedding</option>
+                            <option>Graduation</option>
+                            <option>Engagement</option>
+                            <option>Birthday</option>
+                            <option>Party</option>
+                            <option>Family Gathering</option>
+                            <option>Other Event</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="eventDate">Event Date *</label>
+                        <input type="date" id="eventDate"
+                               class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="eventLocation">Event Location *</label>
+                        <input type="text" id="eventLocation"
+                               class="form-control"
+                               placeholder="City, venue or address" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="servicePackage">Photography Package</label>
+                        <select id="servicePackage" class="form-select">
+                            <option value="Not decided">Not decided yet</option>
+                            <option value="Basic">Basic Photography</option>
+                            <option value="Standard">Standard Photography</option>
+                            <option value="Premium">Premium Photography</option>
+                            <option value="Photography and Video">
+                                Photography and Video
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="eventDetails">Additional Details</label>
+                        <textarea id="eventDetails" class="form-control"
+                                  rows="4"
+                                  placeholder="Tell us about the event, hours needed, or special requests..."></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn submit-booking">
+                            <i class="bi bi-whatsapp"></i>
+                            Send Booking Request
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+ <!-- Footer -->
+<footer class="booking-footer">
+    <div class="container">
+        <a href="index.html" class="footer-brand">
+            <i class="bi bi-camera"></i> Shirzad Photography
+        </a>
+        <p>Capturing moments, creating memories.</p>
+        <p class="copyright">
+            &copy; <span id="currentYear"></span> Shirzad Photography
+        </p>
+    </div>
+</footer>
+
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/booking.js"></script>
+
+</body>
+</html>
