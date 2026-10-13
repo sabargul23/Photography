@@ -405,10 +405,5 @@ paidModal.addEventListener("click", function (event) {
     }
 });
 
-// ادامه پس از تأیید
-confirmDownload.addEventListener("click", function () {
-    if (!confirmPayment.checked || !selectedPaidImage) return;
 
-    alert("Payment confirmation is required before downloading.");
-});
 
