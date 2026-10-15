@@ -16,365 +16,1517 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet"
-          href="Css/style.css">
-
 </head>
 
 <body class="profile-page">
 
-
-    <!-- ================= PROFILE ================= -->
-
-    <section class="profile-section">
-
-        <div class="container">
-
-            <div class="profile-heading">
-
-                <span>MY ACCOUNT</span>
-
-                <h1>
-                    Welcome to Your Profile
-                </h1>
-
-                <p>
-                    Manage your account and photography purchases.
-                </p>
-
-            </div>
-
-
-            <div class="row g-4">
-
-
-                <!-- Profile Card -->
-
-                <div class="col-lg-4">
-
-                    <div class="profile-card text-center">
-
-                        <div class="profile-avatar">
-
-    <img id="profileImage"
-         src="images/profile-default.jpg"
-         alt="Profile Picture">
-
-</div>
-
-<label class="change-photo-btn">
-
-    <i class="bi bi-camera"></i>
-    Change Photo
-
-    <input
-        type="file"
-        id="profilePhoto"
-        accept="image/*"
-        hidden>
-
-</label>
-
-                        <h3>
-                            Photography User
-                        </h3>
-
-                        <p>
-                            user@example.com
-                        </p>
-
-                        <button
-                            class="profile-edit-btn">
-
-                            <i class="bi bi-pencil"></i>
-
-                            Edit Profile
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Account Information -->
-
-                <div class="col-lg-8">
-
-                    <div class="profile-card">
-
-                        <h3 class="profile-title">
-
-                            <i class="bi bi-person-vcard"></i>
-
-                            Account Information
-
-                        </h3>
-
-
-                        <div class="account-info">
-
-                            <div>
-
-                                <span>Full Name</span>
-
-                                <strong>
-                                    Photography User
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <span>Email</span>
-
-                                <strong>
-                                    user@example.com
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <span>Account Status</span>
-
-                                <strong class="status">
-                                    Active
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-            <!-- ================= EDIT PROFILE ================= -->
-
-<div class="profile-card edit-profile-card">
-
-    <h3 class="profile-title">
-        <i class="bi bi-pencil-square"></i>
-        Edit Profile
-    </h3>
-
-    <form id="profileForm">
-
-        <div class="mb-3">
-
-            <label for="profileName">
-                Full Name
-            </label>
-
+ <nav class="profile-navbar">
+    <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">
+            <i class="bi bi-camera-fill"></i>
+        </span>
+        <span>Shirzad <strong>Photography</strong></span>
+    </a>
+
+    <button
+        class="navbar-toggle"
+        id="profileNavToggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+    >
+        <i class="bi bi-list"></i>
+    </button>
+
+    <div class="navbar-links" id="profileNavLinks">
+        <a href="index.html">
+             Home
+        </a>
+
+        <a href="gallery.html">
+             Gallery
+        </a>
+
+        <a href="ai-studio.html">
+            AI Studio
+        </a>
+
+        <a href="pricing.html">
+             Pricing
+        </a>
+
+        <a href="about.html">
+             About
+        </a>
+
+        <a href="Profile.html" class="active">
+         Profile
+        </a>
+    </div>
+</nav>
+ <!-- SECTION 1: MAIN PROFILE -->
+<section class="profile-card">
+    <div class="profile-cover"></div>
+
+    <div class="profile-main">
+        <div class="profile-avatar">
+            <img
+                id="profileImage"
+                
+            >
+        </div>
+
+        <div class="profile-info">
+            <h1 id="profileName">Your Name</h1>
+
+            <p class="profile-email" id="profileEmail">
+                your@email.com
+            </p>
+
+            <p class="profile-bio" id="profileBio">
+                Photography lover and creative designer.
+                Capturing beautiful moments through my camera.
+            </p>
+
+            <button
+                type="button"
+                class="profile-button"
+                onclick="showProfileEditor()"
+            >
+                <i class="bi bi-pencil-square"></i>
+                Edit Profile
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+ /* =========================
+   PROFILE PAGE BODY
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5efff;
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(117, 70, 168, 0.15),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(100, 50, 140, 0.10),
+            transparent 30%
+        ),
+        #0d0b12;
+    line-height: 1.6;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-size: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.profile-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    width: 100%;
+    min-height: 78px;
+    padding: 15px 6%;
+
+    background: rgba(15, 12, 21, 0.88);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(201, 167, 255, 0.18);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.navbar-brand strong {
+    color: #c9a7ff;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: #ffffff;
+    background: linear-gradient(135deg, #7546a8, #a16be0);
+    border-radius: 13px;
+
+    font-size: 20px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.navbar-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 12px;
+
+    color: #d2cbdc;
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 9px;
+    transition: background 0.25s, color 0.25s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #d9bcff;
+    background: rgba(117, 70, 168, 0.2);
+}
+
+.navbar-links a.active {
+    box-shadow: inset 0 -2px 0 #b58ae8;
+}
+
+.navbar-toggle {
+    display: none;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: #ffffff;
+    background: #241b30;
+    border: 1px solid #49345f;
+    border-radius: 10px;
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================
+   PROFILE PAGE CONTENT
+========================= */
+
+.profile-card,
+.profile-section {
+    width: min(950px, calc(100% - 36px));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.profile-card {
+    margin-top: 38px;
+}
+
+.profile-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.profile-footer {
+    margin-top: 70px;
+    padding: 45px 6% 20px;
+
+    color: #c9c0d5;
+    background: #100d17;
+
+    border-top: 1px solid rgba(201, 167, 255, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 0 auto 35px;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-brand i {
+    color: #c9a7ff;
+    font-size: 25px;
+}
+
+.footer-about p {
+    max-width: 360px;
+    margin: 0;
+    color: #a9a0b6;
+    line-height: 1.9;
+}
+
+.footer-column h3 {
+    margin: 0 0 17px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-links a {
+    color: #aaa1b9;
+    font-size: 14px;
+    transition: color 0.25s, padding 0.25s;
+}
+
+.footer-links a:hover {
+    padding-left: 5px;
+    color: #c9a7ff;
+}
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+.footer-socials a {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: #d8c4f5;
+    background: #211a2b;
+    border: 1px solid #3c2c4c;
+    border-radius: 12px;
+
+    font-size: 18px;
+    transition: 0.25s;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+    background: #7546a8;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    border-top: 1px solid #302638;
+    color: #91869f;
+    font-size: 13px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: #c9a7ff;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1050px) {
+    .profile-navbar {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .navbar-links {
+        gap: 2px;
+    }
+
+    .navbar-links a {
+        padding: 9px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 850px) {
+    .profile-navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar-toggle {
+        display: grid;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .navbar-links.show {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar-brand {
+        font-size: 17px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+
+    .profile-footer {
+        padding: 35px 22px 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.profile-card {
+    max-width: 950px;
+    margin: 40px auto;
+    overflow: hidden;
+    color: #fff;
+    background: #15121d;
+    border: 1px solid rgba(201, 167, 255, 0.25);
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.profile-cover {
+    height: 180px;
+    background:
+        radial-gradient(circle at top right, #7546a8, transparent 50%),
+        linear-gradient(135deg, #171222, #40235f, #171222);
+}
+
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 35px 35px;
+}
+
+.profile-avatar {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    margin-top: -65px;
+    overflow: hidden;
+    border: 5px solid #15121d;
+    border-radius: 50%;
+    background: #292136;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.profile-email {
+    margin: 0 0 15px;
+    color: #c9a7ff;
+}
+
+.profile-bio {
+    max-width: 600px;
+    line-height: 1.8;
+    color: #d2cbdc;
+}
+
+.profile-button {
+    margin-top: 10px;
+    padding: 11px 20px;
+    color: #fff;
+    background: #7546a8;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-button:hover {
+    background: #9567d0;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .profile-main {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 22px 25px;
+    }
+
+    .profile-avatar {
+        width: 115px;
+        height: 115px;
+        margin-top: -55px;
+    }
+
+    .profile-info h1 {
+        font-size: 25px;
+    }
+}
+.profile-section {
+    max-width: 950px;
+    margin: 25px auto;
+    padding: 30px;
+    color: #fff;
+    background: #15121d;
+    border: 1px solid rgba(201, 167, 255, 0.2);
+    border-radius: 20px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.section-icon {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    color: #c9a7ff;
+    background: rgba(117, 70, 168, 0.2);
+    border-radius: 14px;
+    font-size: 23px;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+    font-size: 23px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #aaa1b9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    color: #e8ddf5;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: #fff;
+    background: #211b2b;
+    border: 1px solid #453652;
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b58ae8;
+    box-shadow: 0 0 0 3px rgba(181, 138, 232, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.save-button,
+.cancel-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.save-button {
+    color: white;
+    background: #7546a8;
+}
+
+.save-button:hover {
+    background: #9567d0;
+}
+
+.cancel-button {
+    color: #e8ddf5;
+    background: #30283a;
+    border: 1px solid #574663;
+}
+
+.cancel-button:hover {
+    background: #40334e;
+}
+
+.profile-message {
+    min-height: 20px;
+    margin-bottom: 0;
+    color: #c9a7ff;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .profile-section {
+        padding: 20px;
+        margin: 20px 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+}
+/* SECTION 3: PROFILE PHOTO MANAGEMENT */
+
+.photo-manager {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.photo-preview {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    padding: 5px;
+    background: linear-gradient(135deg, #c9a7ff, #7546a8);
+    border-radius: 50%;
+}
+
+.photo-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #15121d;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.photo-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.upload-button,
+.remove-photo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.upload-button {
+    color: white;
+    background: #7546a8;
+}
+
+.upload-button:hover {
+    background: #9567d0;
+}
+
+.remove-photo-button {
+    color: #ffb8c0;
+    background: #2b1c29;
+    border: 1px solid #70404f;
+}
+
+.remove-photo-button:hover {
+    background: #48232f;
+}
+
+.photo-help {
+    margin: 0;
+    color: #aaa1b9;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .photo-manager {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .photo-preview {
+        width: 125px;
+        height: 125px;
+    }
+}
+/* SECTION 4: ACCOUNT SETTINGS */
+
+.settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid #352b40;
+}
+
+.settings-item:last-of-type {
+    border-bottom: none;
+}
+
+.settings-item h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #f5edff;
+}
+
+.settings-item p {
+    max-width: 550px;
+    margin: 0;
+    color: #aaa1b9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.settings-status {
+    padding: 7px 12px;
+    color: #c9a7ff;
+    background: #30213f;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.settings-button {
+    flex-shrink: 0;
+    padding: 10px 15px;
+    color: #fff;
+    background: #30283a;
+    border: 1px solid #574663;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.settings-button:hover {
+    background: #49375b;
+}
+
+.danger-item h3 {
+    color: #ffb8c0;
+}
+
+.danger-button {
+    color: #ffb8c0;
+    background: #351e29;
+    border-color: #70404f;
+}
+
+.danger-button:hover {
+    background: #512635;
+}
+
+.settings-message {
+    min-height: 22px;
+    margin-top: 18px;
+    color: #c9a7ff;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .settings-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .settings-button {
+        width: 100%;
+    }
+}
+</style>
+ <!-- SECTION 2: EDIT PROFILE -->
+<section class="profile-section" id="editProfileSection">
+    <div class="section-heading">
+        <span class="section-icon">
+            <i class="bi bi-person-gear"></i>
+        </span>
+
+        <div>
+            <h2>Edit Profile</h2>
+            <p>Update your personal information.</p>
+        </div>
+    </div>
+
+    <form id="editProfileForm">
+        <div class="form-group">
+            <label for="editName">Full Name</label>
             <input
                 type="text"
-                id="profileName"
-                class="form-control profile-input"
+                id="editName"
                 placeholder="Enter your full name"
-                required>
-
+                required
+                maxlength="80"
+            >
         </div>
 
+        <div class="form-group">
+            <label for="editEmail">Email Address</label>
+            <input
+                type="email"
+                id="editEmail"
+                placeholder="Enter your email"
+                required
+                maxlength="150"
+            >
+        </div>
 
-        <div class="mb-3">
+        <div class="form-group">
+            <label for="editBio">Short Biography</label>
+            <textarea
+                id="editBio"
+                rows="4"
+                maxlength="300"
+                placeholder="Write something about yourself..."
+            ></textarea>
+        </div>
 
-            <label for="profileEmail">
-                Email Address
+        <div class="form-actions">
+            <button type="submit" class="save-button">
+                <i class="bi bi-check-circle"></i>
+                Save Changes
+            </button>
+
+            <button
+                type="button"
+                class="cancel-button"
+                id="cancelEditButton"
+            >
+                Cancel
+            </button>
+        </div>
+
+        <p id="editMessage" class="profile-message"
+           aria-live="polite"></p>
+    </form>
+</section>
+<!-- SECTION 3: PROFILE PHOTO MANAGEMENT -->
+<section class="profile-section" id="photoManagementSection">
+
+    <div class="section-heading">
+        <span class="section-icon">
+            <i class="bi bi-camera"></i>
+        </span>
+
+        <div>
+            <h2>Profile Photo</h2>
+            <p>Upload, change or remove your profile picture.</p>
+        </div>
+    </div>
+
+    <div class="photo-manager">
+
+        <div class="photo-preview">
+            <img
+                id="photoPreview"
+        
+            >
+        </div>
+
+        <div class="photo-controls">
+            <label for="photoUpload" class="upload-button">
+                <i class="bi bi-cloud-arrow-up"></i>
+                Upload New Photo
             </label>
 
             <input
-                type="email"
-                id="profileEmail"
-                class="form-control profile-input"
-                placeholder="Enter your email"
-                required>
+                type="file"
+                id="photoUpload"
+                accept="image/jpeg,image/png,image/webp"
+                hidden
+            >
 
+            <button
+                type="button"
+                id="removePhotoButton"
+                class="remove-photo-button"
+            >
+                <i class="bi bi-trash"></i>
+                Remove Photo
+            </button>
+
+            <p class="photo-help">
+                JPG, PNG or WEBP. Maximum size: 2 MB.
+            </p>
+
+            <p
+                id="photoMessage"
+                class="profile-message"
+                aria-live="polite"
+            ></p>
         </div>
 
+    </div>
+</section>
+<!-- SECTION 4: ACCOUNT SETTINGS -->
+<section class="profile-section" id="accountSettingsSection">
+
+    <div class="section-heading">
+        <span class="section-icon">
+            <i class="bi bi-shield-lock"></i>
+        </span>
+
+        <div>
+            <h2>Account Settings</h2>
+            <p>Manage your profile data and preferences.</p>
+        </div>
+    </div>
+
+    <div class="settings-item">
+        <div>
+            <h3>Saved Profile Information</h3>
+            <p>Keep your profile information saved in this browser.</p>
+        </div>
+
+        <span class="settings-status" id="storageStatus">
+            Checking...
+        </span>
+    </div>
+
+    <div class="settings-item">
+        <div>
+            <h3>Cancel Profile Changes</h3>
+            <p>Restore the last saved name, email and biography.</p>
+        </div>
 
         <button
-            type="submit"
-            class="profile-save-btn">
-
-            <i class="bi bi-check-circle"></i>
-
-            Save Changes
-
+            type="button"
+            class="settings-button"
+            id="restoreProfileButton"
+        >
+            <i class="bi bi-arrow-counterclockwise"></i>
+            Restore
         </button>
+    </div>
 
-    </form>
-
-</div>
-
-
-
-            <!-- Purchases -->
-
-<div class="profile-card purchases-card">
-
-    <h3 class="profile-title">
-
-        <i class="bi bi-bag"></i>
-
-        My Purchases
-
-    </h3>
-
-
-    <div class="row g-4">
-
-
-        <!-- Purchase 1 -->
-
-        <div class="col-md-6">
-
-            <div class="purchase-item">
-
-                <div class="purchase-image">
-
-                    <img
-                        src="Image/travel1.jpg"
-                        alt="Luxury Travel">
-
-                </div>
-
-
-                <div class="purchase-info">
-
-                    <h4>
-                        Luxury Travel
-                    </h4>
-
-                    <p>
-                        Premium Photography
-                    </p>
-
-                    <div class="purchase-bottom">
-
-                        <span>
-                            $10
-                        </span>
-
-                        <button
-                            class="purchase-download"
-                            data-image="Image/travel.jpg"
-                            data-name="Luxury-Travel.jpg">
-
-                            <i class="bi bi-download"></i>
-
-                            Download
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+    <div class="settings-item danger-item">
+        <div>
+            <h3>Clear Saved Profile Data</h3>
+            <p>
+                Remove the profile information and photo saved
+                by this page from this browser.
+            </p>
         </div>
 
+        <button
+            type="button"
+            class="settings-button danger-button"
+            id="clearProfileDataButton"
+        >
+            <i class="bi bi-trash3"></i>
+            Clear Data
+        </button>
+    </div>
 
-        <!-- Purchase 2 -->
+    <div
+        id="accountSettingsMessage"
+        class="settings-message"
+        role="status"
+        aria-live="polite"
+    ></div>
 
-        <div class="col-md-6">
-
-            <div class="purchase-item">
-
-                <div class="purchase-image">
-
-                    <img
-                        src="Image/nature4.jpg"
-                        alt="Beautiful Mountain">
-
-                </div>
+</section>
 
 
-                <div class="purchase-info">
+  <footer class="profile-footer">
 
-                    <h4>
-                        Beautiful Mountain
-                    </h4>
+    <div class="footer-content">
 
-                    <p>
-                        Premium Photography
-                    </p>
+        <div class="footer-about">
+            <a href="index.html" class="footer-brand">
+                <i class="bi bi-camera-fill"></i>
+                <span>Shirzad Photography</span>
+            </a>
 
-                    <div class="purchase-bottom">
+            <p>
+                Capturing beautiful moments and turning them
+                into timeless memories through photography
+                and creative technology.
+            </p>
 
-                        <span>
-                            $15
-                        </span>
+            <div class="footer-socials">
+                <!-- Replace # with your actual profile URLs -->
+                <a href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
 
-                        <button
-                            class="purchase-download"
-                            data-image="Image/nature.jpg"
-                            data-name="Beautiful-Mountain.jpg">
+                <a href="#" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
 
-                            <i class="bi bi-download"></i>
-
-                            Download
-
-                        </button>
-
-                    </div>
-
-                </div>
-
+                <a href="#" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
             </div>
+        </div>
 
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ai-studio.html">AI Studio</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Account</h3>
+
+            <div class="footer-links">
+                <a href="Profile.html">My Profile</a>
+                <a href="about.html">About Us</a>
+                <a href="Contact.html">Contact</a>
+                <a href="booking.html">Book a Service</a>
+            </div>
         </div>
 
     </div>
 
-</div>
-            </div>
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="profileFooterYear"></span>
+            Shirzad Photography. All rights reserved.
+        </p>
 
+        <p>
+            Designed with <span style="color:#c9a7ff;">♥️</span>
+            for photography lovers.
+        </p>
+    </div>
 
-            <!-- Logout -->
-
-            <div class="text-center mt-4">
-
-                <button
-                    class="logout-btn"
-                    id="logoutBtn">
-                <i class="bi bi-box-arrow-right"></i>
-
-                    Logout
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer class="site-footer">
-
-        <div class="container text-center">
-
-            <p>
-                © 2026 Shirzad Photography.
-                All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
+</footer>
 
 
     <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
      <!---link JavaScript--->
-    <script src="Js/profile.js"></script>
+    <script>
+const editForm = document.getElementById("editProfileForm");
+const editName = document.getElementById("editName");
+const editEmail = document.getElementById("editEmail");
+const editBio = document.getElementById("editBio");
+const editMessage = document.getElementById("editMessage");
+
+const profileName = document.getElementById("profileName");
+const profileEmail = document.getElementById("profileEmail");
+const profileBio = document.getElementById("profileBio");
+
+const PROFILE_KEY = "shirzad_profile_v1";
+
+let originalProfile = {
+    name: profileName.textContent.trim(),
+    email: profileEmail.textContent.trim(),
+    bio: profileBio.textContent.trim()
+};
+
+function showProfileEditor() {
+    editName.value = originalProfile.name;
+    editEmail.value = originalProfile.email;
+    editBio.value = originalProfile.bio;
+
+    editMessage.textContent = "";
+
+    document.getElementById("editProfileSection")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+}
+
+function displayProfile(profile) {
+    profileName.textContent = profile.name;
+    profileEmail.textContent = profile.email;
+    profileBio.textContent = profile.bio;
+}
+
+function loadSavedProfile() {
+    try {
+        const saved = localStorage.getItem(PROFILE_KEY);
+
+        if (!saved) return;
+
+        const profile = JSON.parse(saved);
+
+        if (
+            typeof profile.name === "string" &&
+            typeof profile.email === "string" &&
+            typeof profile.bio === "string"
+        ) {
+            originalProfile = profile;
+            displayProfile(profile);
+        }
+    } catch (error) {
+        console.error("Could not load profile:", error);
+    }
+}
+
+editForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const updatedProfile = {
+        name: editName.value.trim(),
+        email: editEmail.value.trim(),
+        bio: editBio.value.trim()
+    };
+
+    if (!updatedProfile.name || !updatedProfile.email) {
+        editMessage.textContent =
+            "Please enter your name and email.";
+        return;
+    }
+
+    try {
+        localStorage.setItem(
+            PROFILE_KEY,
+            JSON.stringify(updatedProfile)
+        );
+
+        originalProfile = updatedProfile;
+        displayProfile(updatedProfile);
+
+        editMessage.textContent =
+            "Your profile has been updated successfully.";
+
+    } catch (error) {
+        editMessage.textContent =
+            "Could not save changes. Please try again.";
+    }
+});
+
+document.getElementById("cancelEditButton")
+    .addEventListener("click", function () {
+        editName.value = originalProfile.name;
+        editEmail.value = originalProfile.email;
+        editBio.value = originalProfile.bio;
+
+        editMessage.textContent = "Changes cancelled.";
+    });
+
+loadSavedProfile();
+const photoUpload = document.getElementById("photoUpload");
+const photoPreview = document.getElementById("photoPreview");
+const mainProfileImage = document.getElementById("profileImage");
+const removePhotoButton =
+    document.getElementById("removePhotoButton");
+const photoMessage = document.getElementById("photoMessage");
+
+const PHOTO_KEY = "shirzad_profile_photo_v1";
+const DEFAULT_PHOTO = "Image/profile-default.png";
+
+function showPhotoMessage(message) {
+    photoMessage.textContent = message;
+}
+
+function displayPhoto(photoUrl) {
+    photoPreview.src = photoUrl;
+    mainProfileImage.src = photoUrl;
+}
+
+function loadSavedPhoto() {
+    try {
+        const savedPhoto = localStorage.getItem(PHOTO_KEY);
+
+        if (savedPhoto) {
+            displayPhoto(savedPhoto);
+        }
+    } catch (error) {
+        showPhotoMessage("Could not load the saved photo.");
+    }
+}
+
+photoUpload.addEventListener("change", function () {
+    const file = photoUpload.files[0];
+
+    if (!file) return;
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+        showPhotoMessage(
+            "Please select a JPG, PNG or WEBP image."
+        );
+        photoUpload.value = "";
+        return;
+    }
+
+    if (file.size > 2 * 1024 * 1024) {
+        showPhotoMessage(
+            "The image must be smaller than 2 MB."
+        );
+        photoUpload.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+        const imageData = event.target.result;
+
+        const testImage = new Image();
+
+        testImage.onload = function () {
+            try {
+                localStorage.setItem(PHOTO_KEY, imageData);
+                displayPhoto(imageData);
+
+                showPhotoMessage(
+                    "Profile photo updated successfully."
+                );
+            } catch (error) {
+                showPhotoMessage(
+                    "Storage is full. Choose a smaller image."
+                );
+            }
+        };
+
+        testImage.onerror = function () {
+            showPhotoMessage("This image could not be opened.");
+        };
+
+        testImage.src = imageData;
+    };
+
+    reader.onerror = function () {
+        showPhotoMessage("Could not read the selected image.");
+    };
+
+    reader.readAsDataURL(file);
+});
+
+removePhotoButton.addEventListener("click", function () {
+    const confirmed = confirm(
+        "Are you sure you want to remove your profile photo?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+        localStorage.removeItem(PHOTO_KEY);
+
+        displayPhoto(DEFAULT_PHOTO);
+        photoUpload.value = "";
+
+        showPhotoMessage("Profile photo removed successfully.");
+    } catch (error) {
+        showPhotoMessage("Could not remove the profile photo.");
+    }
+});
+
+loadSavedPhoto();
+const storageStatus = document.getElementById("storageStatus");
+
+const settingsMessage =
+    document.getElementById("accountSettingsMessage");
+
+const restoreProfileButton =
+    document.getElementById("restoreProfileButton");
+
+const clearProfileDataButton =
+    document.getElementById("clearProfileDataButton");
+
+function updateStorageStatus() {
+    try {
+        const savedProfile =
+            localStorage.getItem("shirzad_profile_v1");
+
+        const savedPhoto =
+            localStorage.getItem("shirzad_profile_photo_v1");
+
+        storageStatus.textContent =
+            savedProfile || savedPhoto
+                ? "Data saved"
+                : "No saved data";
+    } catch (error) {
+        storageStatus.textContent = "Unavailable";
+    }
+}
+
+restoreProfileButton.addEventListener("click", function () {
+    try {
+        const savedProfile =
+            localStorage.getItem("shirzad_profile_v1");
+
+        if (!savedProfile) {
+            settingsMessage.textContent =
+                "No saved profile information was found.";
+            return;
+        }
+
+        const profile = JSON.parse(savedProfile);
+
+        if (
+            typeof profile.name !== "string" ||
+            typeof profile.email !== "string" ||
+            typeof profile.bio !== "string"
+        ) {
+            throw new Error("Invalid profile data");
+        }
+
+        // Restore the main profile display.
+        document.getElementById("profileName").textContent =
+            profile.name;
+
+        document.getElementById("profileEmail").textContent =
+            profile.email;
+
+        document.getElementById("profileBio").textContent =
+            profile.bio;
+
+        // Restore the edit form.
+        document.getElementById("editName").value =
+            profile.name;
+
+        document.getElementById("editEmail").value =
+            profile.email;
+
+        document.getElementById("editBio").value =
+            profile.bio;
+
+        // Update the saved state used by the edit section.
+        originalProfile = profile;
+
+        settingsMessage.textContent =
+            "Saved profile information restored successfully.";
+
+        updateStorageStatus();
+
+    } catch (error) {
+        settingsMessage.textContent =
+            "Could not restore the saved information.";
+    }
+});
+
+clearProfileDataButton.addEventListener("click", function () {
+    const confirmed = confirm(
+        "Clear the profile information and photo saved by this page? " +
+        "This action cannot be undone."
+    );
+
+    if (!confirmed) return;
+
+    try {
+        // Remove only the keys used by these profile sections.
+        localStorage.removeItem("shirzad_profile_v1");
+        localStorage.removeItem("shirzad_profile_photo_v1");
+
+        // Reset profile information to the original page defaults.
+        const defaultProfile = {
+            name: "Your Name",
+            email: "your@email.com",
+            bio: "Photography lover and creative designer. " +
+                 "Capturing beautiful moments through my camera."
+        };
+
+        originalProfile = defaultProfile;
+
+        document.getElementById("profileName").textContent =
+            defaultProfile.name;
+
+        document.getElementById("profileEmail").textContent =
+            defaultProfile.email;
+
+        document.getElementById("profileBio").textContent =
+            defaultProfile.bio;
+
+        document.getElementById("editName").value =
+            defaultProfile.name;
+
+        document.getElementById("editEmail").value =
+            defaultProfile.email;
+
+        document.getElementById("editBio").value =
+            defaultProfile.bio;
+
+        // Reset the photo preview and main profile photo.
+        document.getElementById("profileImage").src =
+            "Image/profile-default.png";
+
+        document.getElementById("photoPreview").src =
+            "Image/profile-default.png";
+
+        document.getElementById("photoUpload").value = "";
+
+        settingsMessage.textContent =
+            "Saved profile data and photo have been cleared.";
+
+        updateStorageStatus();
+        } catch (error) {
+        settingsMessage.textContent =
+            "Could not clear the saved data.";
+    }
+});
+
+updateStorageStatus();
+const profileNavToggle =
+    document.getElementById("profileNavToggle");
+
+const profileNavLinks =
+    document.getElementById("profileNavLinks");
+
+profileNavToggle.addEventListener("click", function () {
+    const isOpen = profileNavLinks.classList.toggle("show");
+
+    profileNavToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+    profileNavToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+});
+
+profileNavLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        profileNavLinks.classList.remove("show");
+
+        profileNavToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        profileNavToggle.innerHTML =
+            '<i class="bi bi-list"></i>';
+    });
+});
+</script>
 
 </body>
 

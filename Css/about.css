@@ -10,21 +10,43 @@ body {
     line-height: 1.7;
 }
 
+/*---Navbar----*/
 .navbar {
-    background: rgba(16, 13, 20, 0.88);
+    background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #302438;
+    padding: 18px 0;
 }
-
 .navbar-brand {
-    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
 }
-
+.navbar-brand i {
+    margin-right: 8px;
+}
 .nav-link {
-    margin-left: 12px;
-    transition: color 0.3s;
+    color: #ffffff !important;
+    margin: 0 8px;
+    transition: 0.3s;
 }
-
+.nav-link:hover, .nav-link.active {
+    color: #c9a7ff !important;
+}
+.navbar-nav {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+.navbar-nav .nav-item {
+    list-style: none !important;
+}
+.navbar-nav .nav-link {
+    display: block;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 .nav-link:hover,
 .nav-link.active {
     color: #c9a7ff !important;

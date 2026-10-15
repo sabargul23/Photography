@@ -13,29 +13,42 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.booking-navbar {
-    background: rgba(15, 12, 20, 0.96);
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(214, 162, 255, 0.15);
+/*---Navbar----*/
+.navbar {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    padding: 18px 0;
 }
-
-.booking-navbar .navbar-brand {
-    color: #e0bcff;
-    font-weight: 700;
+.navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
 }
-
-.booking-navbar .nav-link {
-    color: #e5dfe9;
-    margin-left: 12px;
+.navbar-brand i {
+    margin-right: 8px;
 }
-
-.booking-navbar .nav-link:hover,
-.booking-navbar .nav-link.active {
-    color: #d6a2ff;
+.nav-link {
+    color: #ffffff !important;
+    margin: 0 8px;
+    transition: 0.3s;
 }
-
-.navbar-toggler {
-    background: #d6a2ff;
+.nav-link:hover, .nav-link.active {
+    color: #c9a7ff !important;
+}
+.navbar-nav {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+.navbar-nav .nav-item {
+    list-style: none !important;
+}
+.navbar-nav .nav-link {
+    display: block;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .booking-hero {

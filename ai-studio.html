@@ -174,20 +174,104 @@
     margin-left: 8px;
     background: #513044;
 }
+/*---Navbar----*/
+.navbar {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    padding: 18px 0;
+}
+.navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+.navbar-brand i {
+    margin-right: 8px;
+}
+.nav-link {
+    color: #ffffff !important;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #c9a7ff !important;
+}
+.navbar-nav {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+.navbar-nav .nav-item {
+    list-style: none !important;
+}
+.navbar-nav .nav-link {
+    display: block;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">
-            <i class="bi bi-camera"></i> Shirzad Photography
-        </a>
-        <a class="btn btn-outline-light btn-sm" href="gallery.html">
-            Gallery
-        </a>
-    </div>
-</nav>
+  <!----Navbar--->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!---Logo--->
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-camera"></i>
+                Shirzad Photography
+            </a>
+            <!----Mobile Button---->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!----Meun---->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ai-studio.html">AI Studio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact</a>
+                        </li>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="booking.html">Booking</a>
+                        </li>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Profile.html">
+                                <i class="bi bi-person-circle"></i>Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="btn btn-light rounded-pill px-4">Login</a>
+                        </li>
+                    
+                    </ul>
+                </div>   
+        </div>
+    </nav>
 
 <main class="studio">
     <div class="text-center mb-5">
